@@ -1,0 +1,18 @@
+# Model configuration settings
+models:
+  default:
+    name: "gpt-4"
+    temperature: 0.7
+  alternatives:
+    - name: "claude-3"
+    - name: "llama-2"
+
+# Attention parameters
+attention:
+  k: 80  # Top-k tokens for sink filter
+  epsilon: 0.85  # Entropy threshold
+
+# Detection thresholds
+detection:
+  air_threshold: 0.5  # AIR threshold for poisoning detection
+
