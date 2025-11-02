@@ -162,8 +162,8 @@ class DataLoader:
         benign = sum(1 for tc in test_cases if tc.label == "benign")
         poisoned = sum(1 for tc in test_cases if tc.label == "poisoned")
         
-        attack_types = {}
-        domains = {}
+        attack_types: Dict[str, int] = {}
+        domains: Dict[str, int] = {}
         
         for tc in test_cases:
             # Count attack types
@@ -316,7 +316,7 @@ class CacheManager:
         with open(filepath, 'w') as f:
             json.dump(output_data, f, indent=2)
     
-    def load_output(self, test_case_id: str, model_name: str) -> Optional[Dict[str, Any]]:
+    def load_output(self, test_case_id: str, model_name: str) -> Optional[Any]:
         """Load model output from cache"""
         cache_key = self._get_cache_key(test_case_id, model_name)
         filepath = self.output_dir / f"{cache_key}.json"
@@ -326,7 +326,7 @@ class CacheManager:
         
         with open(filepath, 'r') as f:
             data = json.load(f)
-            return data['output']
+            return data.get('output')
     
     def clear_cache(self, cache_type: str = "all"):
         """Clear cache files"""
@@ -348,7 +348,7 @@ class DatasetSplitter:
         if data_root is None:
             data_root = Path("./data")
         self.data_root = data_root
-        self.loader = DataLoader(data_root)
+        self.loader = DataLoader(data_root=str(data_root))
     
     def create_splits(
         self, 

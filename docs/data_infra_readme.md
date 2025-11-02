@@ -465,7 +465,7 @@ MINDGUARD Data Utilities Demo
    Tools: 2
 
 2. Validating test case...
-   ✓ Test case is valid
+   [OK] Test case is valid
 
 3. Demonstrating cache functionality...
    Cached and loaded output: True
@@ -555,7 +555,7 @@ cache.clear_cache("output")  # Clear only outputs
 - [x] Configuration management
 - [x] Complete documentation
 
-**Status**: ✓ COMPLETE
+**Status**: [COMPLETE]
 
 ---
 
