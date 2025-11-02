@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": [
+    "attack_id",
+    "attack_type",
+    "payload",
+    "target_action"
+  ],
+  "properties": {
+    "attack_id": {
+      "type": "string"
+    },
+    "attack_type": {
+      "type": "string",
+      "enum": [
+        "A1_explicit_hijacking",
+        "A2_parameter_manipulation"
+      ]
+    },
+    "payload": {
+      "type": "string",
+      "description": "Malicious instruction embedded in tool description"
+    },
+    "target_action": {
+      "type": "object",
+      "properties": {
+        "tool_name": {
+          "type": "string"
+        },
+        "arguments": {
+          "type": "object"
+        }
+      },
+      "description": "Desired malicious invocation"
+    },
+    "intensity": {
+      "type": "string",
+      "enum": [
+        "obvious",
+        "moderate",
+        "subtle"
+      ],
+      "description": "How detectable the payload is"
+    }
+  }
+}

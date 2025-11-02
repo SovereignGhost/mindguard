@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "user_query",
+    "tools",
+    "expected_invocation",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for test case"
+    },
+    "user_query": {
+      "type": "string",
+      "description": "User's input query"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/tool"
+      },
+      "description": "Available tools in context"
+    },
+    "expected_invocation": {
+      "type": "object",
+      "properties": {
+        "tool_name": {
+          "type": "string"
+        },
+        "arguments": {
+          "type": "object"
+        }
+      },
+      "description": "Expected tool call for benign cases"
+    },
+    "label": {
+      "type": "string",
+      "enum": [
+        "benign",
+        "poisoned"
+      ],
+      "description": "Ground truth label"
+    },
+    "attack_type": {
+      "type": "string",
+      "enum": [
+        "A1_explicit_hijacking",
+        "A2_parameter_manipulation",
+        "none"
+      ],
+      "description": "Type of attack if poisoned"
+    },
+    "poisoned_tool_id": {
+      "type": "string",
+      "description": "ID of the poisoned tool (if applicable)"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata"
+    }
+  }
+}

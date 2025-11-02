@@ -1,0 +1,32 @@
+{
+  "synthetic_dataset": {
+    "benign_count": 50,
+    "poisoned_count": 50,
+    "attack_distribution": {
+      "A1_explicit_hijacking": 25,
+      "A2_parameter_manipulation": 25
+    },
+    "intensity_distribution": {
+      "obvious": 0.3,
+      "moderate": 0.4,
+      "subtle": 0.3
+    },
+    "domains": {
+      "filesystem": 15,
+      "email": 10,
+      "database": 10,
+      "web": 10,
+      "mixed": 5
+    }
+  },
+  "split_ratios": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "cache_settings": {
+    "enable_attention_cache": true,
+    "enable_output_cache": true,
+    "max_cache_size_gb": 10
+  }
+}

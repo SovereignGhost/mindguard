@@ -1,0 +1,27 @@
+# Ignore large cache files
+cache/
+*.pt
+*.pth
+*.npy
+*.npz
+
+# Ignore processed attention matrices (can be regenerated)
+processed/attention_matrices/
+
+# Ignore large result files
+results/**/*.png
+results/**/*.pdf
+results/**/*.html
+
+# Keep directory structure
+!**/README.md
+!**/.gitkeep
+
+# Ignore MCPTox data (may have licensing restrictions)
+mcptox/original/
+mcptox/processed/
+
+# Ignore temporary files
+*.tmp
+*.temp
+.DS_Store

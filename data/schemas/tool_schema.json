@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "parameters"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Tool name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Natural language description of the tool"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Tool parameters with types and descriptions"
+    },
+    "server": {
+      "type": "string",
+      "description": "MCP server providing this tool"
+    }
+  }
+}

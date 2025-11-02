@@ -1,2 +1,1 @@
 """Attack simulation modules."""
-
